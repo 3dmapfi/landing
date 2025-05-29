@@ -4,7 +4,7 @@ export default function AboutUs() {
   return (
     <section
       id="about"
-      className="py-20 bg-background/95 backdrop-blur rounded-2xl shadow-xl mt-16"
+      className="py-36 bg-background backdrop-blur rounded-2xl shadow-xl"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
         <div className="flex-1">

@@ -5,6 +5,8 @@ import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import AboutUs from "./components/AboutUs";
 import Pricing from "./components/Pricing";
+import BlogSection from "./components/BlogSection";
+import { Quote } from "./components/Quote";
 
 export default function Home() {
   return (
@@ -20,9 +22,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Features />
-        <CTA />
         <AboutUs />
+        <CTA />
         <Pricing />
+        <Quote />
         <Footer />
       </div>
     </div>

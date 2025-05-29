@@ -2,34 +2,34 @@ import { Brain, Cloud, Shield, Zap } from "lucide-react";
 
 const features = [
   {
-    name: "AI-Powered Analytics",
+    name: "AI-Driven Map Intelligence",
     description:
-      "Harness the power of machine learning to derive actionable insights from your data.",
+      "Leverage advanced AI to analyze geospatial data, uncover trends, and automate map-based decision making.",
     icon: Brain,
   },
   {
-    name: "Cloud-Native Architecture",
+    name: "Blockchain-Powered Data Integrity",
     description:
-      "Scalable, resilient, and efficient solutions built for the modern cloud ecosystem.",
-    icon: Cloud,
-  },
-  {
-    name: "Enterprise-Grade Security",
-    description:
-      "State-of-the-art security measures to protect your most valuable assets.",
+      "Ensure the authenticity and traceability of your geospatial data with secure blockchain technology.",
     icon: Shield,
   },
   {
-    name: "High-Performance Systems",
+    name: "Real-Time Collaborative Mapping",
     description:
-      "Optimized for speed and efficiency, our solutions deliver unparalleled performance.",
+      "Collaborate on live maps with seamless cloud-native tools, enabling teams to build and update geospatial projects together.",
+    icon: Cloud,
+  },
+  {
+    name: "High-Performance 3D Visualization",
+    description:
+      "Experience fast, interactive 3D maps optimized for large-scale datasets and complex analytics.",
     icon: Zap,
   },
 ];
 
 export default function Features() {
   return (
-    <section className="container space-y-16 py-24 md:py-32">
+    <section className="container space-y-16 py-24 md:py-32" id="features">
       <div className="mx-auto max-w-[58rem] text-center">
         <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
           Cutting-Edge Solutions
