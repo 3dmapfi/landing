@@ -17,7 +17,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <Link
-                  href="/about"
+                  href="#about"
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   About Us
@@ -25,7 +25,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/pricing"
+                  href="#pricing"
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Pricing

@@ -18,8 +18,11 @@ export default function Navbar() {
           >
             Features
           </Link>
-          <Link href="#blog" className="transition-colors hover:text-primary">
-            Blog
+          <Link
+            href="#pricing"
+            className="transition-colors hover:text-primary"
+          >
+            Pricing
           </Link>
           <Link href="#about" className="transition-colors hover:text-primary">
             About Us
@@ -31,10 +34,10 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
           >
-            <Button variant="ghost" size="icon">
+            {/* <Button variant="ghost" size="icon">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
-            </Button>
+            </Button> */}
           </Link>
           <Button
             variant="ghost"

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "3DMapFi - Cutting-Edge Map Solutions",
   description:
     "3DMapFi delivers innovative, high-performance maps for businesses of the future.",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<PropsWithChildren>) {
