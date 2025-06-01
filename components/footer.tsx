@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Twitter, Linkedin } from "lucide-react";
+import { XIcon } from "./icons/x-icon";
 
 export default function Footer() {
   return (
@@ -68,7 +69,7 @@ export default function Footer() {
                 href="https://twitter.com/3dmapfi"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <Twitter className="h-5 w-5" />
+                <XIcon className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
             </div>

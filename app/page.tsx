@@ -5,7 +5,6 @@ import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import AboutUs from "./components/AboutUs";
 import Pricing from "./components/Pricing";
-import BlogSection from "./components/BlogSection";
 import { Quote } from "./components/Quote";
 
 export default function Home() {
@@ -26,6 +25,8 @@ export default function Home() {
         <CTA />
         <Pricing />
         <Quote />
+        {/* <FeedbackSection />
+        <BlogSection /> */}
         <Footer />
       </div>
     </div>
