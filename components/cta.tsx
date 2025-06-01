@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 // Dynamically import the 3D overlay to avoid SSR issues
 const Animated3DOverlay = dynamic(
@@ -25,9 +26,11 @@ export default function CTA() {
           Join leading companies who trust 3DMapFi to drive their digital
           transformation and stay ahead in the rapidly evolving tech landscape.
         </p>
-        <Button size="lg" className="mt-4">
-          Get Started Today
-        </Button>
+        <Link href="https://docs.3dmapfi.xyz" target="_blank" rel="noreferrer">
+          <Button size="lg" className="mt-4">
+            Get Started Today
+          </Button>
+        </Link>
       </div>
     </section>
   );

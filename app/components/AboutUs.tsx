@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
@@ -23,10 +25,19 @@ export default function AboutUs() {
             <li>No coding or technical expertise needed</li>
             <li>Trusted by forward-thinking businesses and creators</li>
           </ul>
+          <Link
+            href="https://editor.3dmapfi.xyz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button size="lg" className="mt-4">
+              <b>Try it here!</b>
+            </Button>
+          </Link>
         </div>
         <div className="flex-1 flex justify-center">
           <Image
-            src="/product.jpg"
+            src="/editor.png"
             alt="3DMapFi Platform Preview"
             width={480}
             height={320}

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ThreeScene from "./three-scene";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -34,13 +35,17 @@ export default function Hero() {
         </p>
       </div>
       <div className="relative z-10 flex gap-4">
-        <Button size="lg">
-          Explore Solutions
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Button>
-        <Button variant="outline" size="lg">
-          Schedule a Demo
-        </Button>
+        <Link href="#about">
+          <Button size="lg">
+            Explore Solutions
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </Link>
+        <Link href="https://x.com/3dmapfi" target="_blank" rel="noreferrer">
+          <Button variant="outline" size="lg">
+            Schedule a Demo
+          </Button>
+        </Link>
       </div>
     </section>
   );

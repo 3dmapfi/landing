@@ -1,8 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { Github } from "lucide-react";
+import { Github, Send } from "lucide-react";
 import Link from "next/link";
+import { XIcon } from "./icons/x-icon";
 
 export default function Navbar() {
   return (
@@ -27,6 +28,14 @@ export default function Navbar() {
           <Link href="#about" className="transition-colors hover:text-primary">
             About Us
           </Link>
+          <Link
+            href="https://docs.3dmapfi.xyz"
+            className="transition-colors hover:text-primary"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Documentation
+          </Link>
         </nav>
         <div className="flex items-center space-x-4">
           <Link
@@ -34,18 +43,27 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
           >
-            {/* <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon">
               <Github className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
-            </Button> */}
+            </Button>
           </Link>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => (window.location.href = "mailto:3dmapfi@gmail.com")}
+          <Link
+            href="https://t.me/ThreeDMapfi"
+            target="_blank"
+            rel="noreferrer"
           >
-            Contact
-          </Button>
+            <Button variant="ghost" size="icon">
+              <Send className="h-4 w-4 " />
+              <span className="sr-only">Telegram</span>
+            </Button>
+          </Link>
+          <Link href="https://x.com/3dmapfi" target="_blank" rel="noreferrer">
+            <Button variant="ghost" size="icon">
+              <XIcon className="h-4 w-4" />
+              <span className="sr-only">X</span>
+            </Button>
+          </Link>
           <WalletMultiButton
             className="h-9 rounded-md px-3 bg-primary text-primary-foreground hover:bg-primary/90"
             style={{
