@@ -63,21 +63,14 @@ export default function Hero() {
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          <Link href="#about">
+          <Link
+            href="https://editor.3dmapfi.xyz"
+            target="_blank"
+            rel="noreferrer"
+          >
             <Button size="lg">
-              Explore Solutions
+              Explore
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </Link>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.97 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <Link href="https://x.com/3dmapfi" target="_blank" rel="noreferrer">
-            <Button variant="outline" size="lg">
-              Schedule a Demo
             </Button>
           </Link>
         </motion.div>
