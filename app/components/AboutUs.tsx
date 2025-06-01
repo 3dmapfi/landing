@@ -1,11 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function AboutUs() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section
       id="about"
@@ -91,16 +92,20 @@ export default function AboutUs() {
             rel="noreferrer"
           >
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, delay: 0.7 }}
+              className="inline-block"
+              animate={{
+                rotate: [0, 4, -4, 0],
+                x: [0, 4, -4, 0],
+              }}
+              transition={{
+                duration: 0.7,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
             >
-              <Button
-                size="lg"
-                className="mt-4 hover:scale-105 transition-transform"
-              >
-                <b>Try it here!</b>
+              <Button size="lg" className="mt-4 px-8 py-4">
+                <b>✨ Try it here! ✨</b>
               </Button>
             </motion.div>
           </Link>
@@ -118,7 +123,7 @@ export default function AboutUs() {
           }}
         >
           <motion.div
-            className="relative"
+            className="relative cursor-pointer"
             initial={{ rotate: -4, scale: 0.98 }}
             whileHover={{
               rotate: 2,
@@ -126,14 +131,21 @@ export default function AboutUs() {
               boxShadow: "0 8px 32px 0 #00d2ff44",
             }}
             transition={{ type: "spring", stiffness: 120, damping: 8 }}
+            onClick={() => setShowModal(true)}
+            tabIndex={0}
+            aria-label="Zoom video preview"
+            role="button"
           >
-            <Image
-              src="/editor.png"
-              alt="3DMapFi Platform Preview"
+            <video
+              src="/demo1.mp4"
               width={480}
               height={320}
               className="rounded-xl shadow-lg object-cover"
-              priority
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/editor.png"
             />
             {/* Animated glow effect */}
             <motion.span
@@ -153,6 +165,47 @@ export default function AboutUs() {
           </motion.div>
         </motion.div>
       </motion.div>
+      {/* Modal for zoomed video */}
+      {showModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          tabIndex={-1}
+          onClick={() => setShowModal(false)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setShowModal(false);
+          }}
+        >
+          <div
+            className="relative max-w-3xl w-full p-4"
+            role="document"
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") setShowModal(false);
+            }}
+          >
+            <button
+              className="absolute top-2 right-2 text-white text-2xl bg-black/40 rounded-full px-2 py-1 hover:bg-black/70 focus:outline-none"
+              onClick={() => setShowModal(false)}
+              aria-label="Close video modal"
+            >
+              ×
+            </button>
+            <video
+              src="/demo1.mp4"
+              className="w-full h-auto rounded-xl shadow-2xl border-4 border-white"
+              autoPlay
+              loop
+              muted
+              controls
+              playsInline
+              poster="/editor.png"
+              style={{ background: "#222" }}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
