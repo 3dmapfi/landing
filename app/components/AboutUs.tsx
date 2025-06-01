@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { Brain } from "lucide-react";
 
 export default function AboutUs() {
   const [showModal, setShowModal] = useState(false);
@@ -206,6 +207,78 @@ export default function AboutUs() {
           </div>
         </div>
       )}
+      {/* MapFi LLM Section */}
+      <motion.div
+        className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8 mt-20"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.2 }}
+      >
+        <motion.div
+          className="flex-1"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.1,
+            type: "spring",
+            bounce: 0.2,
+          }}
+        >
+          <motion.h2
+            className="text-3xl font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            MapFi LLM{" "}
+            <span className="ml-2 text-base font-medium text-primary/70">
+              (In Development)
+            </span>
+          </motion.h2>
+          <motion.p
+            className="text-lg text-muted-foreground mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            MapFi LLM is your AI assistant for mapping—generate map layers,
+            analyze spatial data, automate workflows, and get code or
+            integration help, all in plain English.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <div className="font-semibold mb-1">Key Features</div>
+            <ul className="list-disc pl-5 text-muted-foreground text-base space-y-1">
+              <li>Natural language to map layers</li>
+              <li>Spatial data Q&A</li>
+              <li>Code & workflow automation</li>
+              <li>Integration & docs help</li>
+            </ul>
+          </motion.div>
+        </motion.div>
+        <motion.div className="flex-1 flex justify-center items-center">
+          <div className="rounded-xl bg-muted/40 border border-muted p-8 text-center shadow-lg flex flex-col items-center">
+            <div className="flex justify-center items-center mb-4">
+              <Brain className="h-16 w-16 text-primary drop-shadow" />
+            </div>
+            <div className="font-semibold text-lg mb-2">MapFi LLM</div>
+            <div className="text-muted-foreground text-base">
+              AI assistant for mapping, code, and data analysis.
+              <br />
+              Coming soon!
+            </div>
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
