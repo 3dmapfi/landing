@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Brain } from "lucide-react";
 
 export default function AboutUs() {
   const [showModal, setShowModal] = useState(false);
+  const [showGeneratorModal, setShowGeneratorModal] = useState(false);
+
   return (
     <section
       id="about"
@@ -106,7 +107,7 @@ export default function AboutUs() {
               }}
             >
               <Button size="lg" className="mt-4 px-8 py-4">
-                <b>✨ Try it here! ✨</b>
+                <b>✨ Try Editor! ✨</b>
               </Button>
             </motion.div>
           </Link>
@@ -138,7 +139,7 @@ export default function AboutUs() {
             role="button"
           >
             <video
-              src="/demo1.mp4"
+              src="/demo1.mov"
               width={480}
               height={320}
               className="rounded-xl shadow-lg object-cover"
@@ -194,7 +195,186 @@ export default function AboutUs() {
               ×
             </button>
             <video
-              src="/demo1.mp4"
+              src="/demo1.mov"
+              className="w-full h-auto rounded-xl shadow-2xl border-4 border-white"
+              autoPlay
+              loop
+              muted
+              controls
+              playsInline
+              poster="/editor.png"
+              style={{ background: "#222" }}
+            />
+          </div>
+        </div>
+      )}
+      {/* MapFi Generator Section */}
+      <motion.div
+        className="container mx-auto flex flex-col md:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8 mt-20"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, type: "spring", bounce: 0.2 }}
+      >
+        <motion.div
+          className="flex-1 flex justify-center"
+          initial={{ opacity: 0, x: 40, scale: 0.95 }}
+          whileInView={{ opacity: 1, x: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.2,
+            type: "spring",
+            bounce: 0.25,
+          }}
+        >
+          <motion.div
+            className="relative cursor-pointer"
+            initial={{ rotate: -4, scale: 0.98 }}
+            whileHover={{
+              rotate: 2,
+              scale: 1.03,
+              boxShadow: "0 8px 32px 0 #00d2ff44",
+            }}
+            transition={{ type: "spring", stiffness: 120, damping: 8 }}
+            onClick={() => setShowGeneratorModal(true)}
+            tabIndex={0}
+            aria-label="Zoom video preview"
+            role="button"
+          >
+            <video
+              src="/demo2.mov"
+              width={480}
+              height={320}
+              className="rounded-xl shadow-lg object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/editor.png"
+            />
+            {/* Animated glow effect */}
+            <motion.span
+              className="absolute inset-0 rounded-xl pointer-events-none"
+              style={{
+                boxShadow: "0 0 32px 0 #00d2ff55, 0 4px 32px 0 #3a7bd533",
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.7 }}
+              transition={{
+                duration: 1.2,
+                delay: 0.5,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
+          </motion.div>
+        </motion.div>
+        <motion.div
+          className="flex-1"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.1,
+            type: "spring",
+            bounce: 0.2,
+          }}
+        >
+          <motion.h2
+            className="text-3xl font-bold mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            MapFi Generator{" "}
+            <span className="ml-2 text-base font-medium text-primary/70">
+              (3D Model Generator)
+            </span>
+          </motion.h2>
+          <motion.p
+            className="text-lg text-muted-foreground mb-6"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
+            Instantly generate 3D models from your 2D/3D data using AI. The
+            MapFi Generator empowers users to create, customize, and export
+            high-quality 3D assets for use in virtual environments, games, and
+            digital twins—no modeling experience required.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+          >
+            <div className="font-semibold mb-1">Key Features</div>
+            <ul className="list-disc pl-5 text-muted-foreground text-base space-y-1">
+              <li>Upload 2D/3D data (images, point clouds, CAD, etc.)</li>
+              <li>AI-powered 3D model creation and enhancement</li>
+              <li>Export to GLTF, OBJ, FBX, and more</li>
+              <li>Seamless integration with MapFi Editor</li>
+              <li>Customizable textures and materials</li>
+            </ul>
+          </motion.div>
+          <Link
+            href="https://generator.3dmapfi.xyz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <motion.div
+              className="inline-block"
+              animate={{
+                rotate: [0, 4, -4, 0],
+                x: [0, 4, -4, 0],
+              }}
+              transition={{
+                duration: 0.7,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut",
+              }}
+            >
+              <Button size="lg" className="mt-4 px-8 py-4">
+                <b>✨ Try Generator! ✨</b>
+              </Button>
+            </motion.div>
+          </Link>
+        </motion.div>
+      </motion.div>
+      {/* Modal for zoomed video (MapFi Generator) */}
+      {showGeneratorModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          tabIndex={-1}
+          onClick={() => setShowGeneratorModal(false)}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") setShowGeneratorModal(false);
+          }}
+        >
+          <div
+            className="relative max-w-3xl w-full p-4"
+            role="document"
+            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => {
+              if (e.key === "Escape") setShowGeneratorModal(false);
+            }}
+          >
+            <button
+              className="absolute top-2 right-2 text-white text-2xl bg-black/40 rounded-full px-2 py-1 hover:bg-black/70 focus:outline-none"
+              onClick={() => setShowGeneratorModal(false)}
+              aria-label="Close video modal"
+            >
+              ×
+            </button>
+            <video
+              src="/demo2.mov"
               className="w-full h-auto rounded-xl shadow-2xl border-4 border-white"
               autoPlay
               loop
@@ -266,17 +446,14 @@ export default function AboutUs() {
           </motion.div>
         </motion.div>
         <motion.div className="flex-1 flex justify-center items-center">
-          <div className="rounded-xl bg-muted/40 border border-muted p-8 text-center shadow-lg flex flex-col items-center">
-            <div className="flex justify-center items-center mb-4">
-              <Brain className="h-16 w-16 text-primary drop-shadow" />
-            </div>
-            <div className="font-semibold text-lg mb-2">MapFi LLM</div>
-            <div className="text-muted-foreground text-base">
-              AI assistant for mapping, code, and data analysis.
-              <br />
-              Coming soon!
-            </div>
-          </div>
+          <img
+            src="/demo3.png"
+            alt="MapFi LLM Preview"
+            width={480}
+            height={320}
+            className="rounded-xl shadow-lg mb-4 bg-muted"
+            style={{ maxWidth: 480, maxHeight: 320 }}
+          />
         </motion.div>
       </motion.div>
     </section>

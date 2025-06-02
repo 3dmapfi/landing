@@ -64,6 +64,21 @@ export default function Hero() {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Link
+            href="https://generator.3dmapfi.xyz"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Button size="lg" variant="secondary">
+              Generator
+            </Button>
+          </Link>
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <Link
             href="https://editor.3dmapfi.xyz"
             target="_blank"
             rel="noreferrer"
