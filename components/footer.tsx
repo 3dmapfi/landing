@@ -1,5 +1,5 @@
+import { Github } from "lucide-react";
 import Link from "next/link";
-import { Github, Twitter, Linkedin } from "lucide-react";
 import { XIcon } from "./icons/x-icon";
 
 export default function Footer() {
@@ -30,6 +30,30 @@ export default function Footer() {
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://editor.3dmapfi.xyz"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  Map Editor
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://generator.3dmapfi.xyz"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  3D Generator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://chat.3dmapfi.xyz"
+                  className="text-muted-foreground transition-colors hover:text-primary"
+                >
+                  LLM Chat
                 </Link>
               </li>
             </ul>
